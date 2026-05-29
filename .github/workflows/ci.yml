@@ -21,15 +21,15 @@ jobs:
           cache: "pip"
 
       - name: Criar ambiente virtual
-        run: python -m venv .venv
+        run: python -m venv venv
 
       - name: Atualizar pip
-        run: .venv/bin/python -m pip install --upgrade pip setuptools wheel
+        run: venv/bin/python -m pip install --upgrade pip setuptools wheel
 
       - name: Instalar dependencias (requirements.txt)
         if: hashFiles('requirements.txt') != ''
-        run: .venv/bin/python -m pip install -r requirements.txt
+        run: venv/bin/python -m pip install -r requirements.txt
 
       - name: Instalar dependencias (pyproject.toml)
         if: hashFiles('pyproject.toml') != '' && hashFiles('requirements.txt') == ''
-        run: .venv/bin/python -m pip install .
+        run: venv/bin/python -m pip install .
