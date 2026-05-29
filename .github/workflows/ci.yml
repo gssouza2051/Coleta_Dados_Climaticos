@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  instalacao:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Criar ambiente virtual
+        run: python -m venv .venv
+
+      - name: Atualizar pip
+        run: .venv/bin/python -m pip install --upgrade pip setuptools wheel
+
+      - name: Instalar dependencias (requirements.txt)
+        if: hashFiles('requirements.txt') != ''
+        run: .venv/bin/python -m pip install -r requirements.txt
+
+      - name: Instalar dependencias (pyproject.toml)
+        if: hashFiles('pyproject.toml') != '' && hashFiles('requirements.txt') == ''
+        run: .venv/bin/python -m pip install .
