@@ -1,0 +1,32 @@
+[
+  {
+    "cidade": "São Paulo",
+    "fonte": "inmet",
+    "coletado_em_utc": "2026-05-29T20:16:55.769644+00:00",
+    "temperatura_minima": 12,
+    "temperatura_maxima": 16,
+    "probabilidade_chuva": 84,
+    "observacao": "simulacao",
+    "alerta_chuva": true
+  },
+  {
+    "cidade": "Rio de Janeiro",
+    "fonte": "inmet",
+    "coletado_em_utc": "2026-05-29T20:16:56.270247+00:00",
+    "temperatura_minima": 24,
+    "temperatura_maxima": 33,
+    "probabilidade_chuva": 21,
+    "observacao": "simulacao",
+    "alerta_chuva": false
+  },
+  {
+    "cidade": "Campinas",
+    "fonte": "inmet",
+    "coletado_em_utc": "2026-05-29T20:16:56.771298+00:00",
+    "temperatura_minima": 22,
+    "temperatura_maxima": 34,
+    "probabilidade_chuva": 44,
+    "observacao": "simulacao",
+    "alerta_chuva": false
+  }
+]

@@ -202,7 +202,7 @@ def criar_navegador():
         ) from erro
 
     opcoes = Options()
-    opcoes.add_argument("--headless=new")
+    #opcoes.add_argument("--headless=new")
     opcoes.add_argument("--disable-gpu")
     opcoes.add_argument("--no-sandbox")
     opcoes.add_argument("--window-size=1366,768")
